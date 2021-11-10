@@ -1,0 +1,34 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(rgb(221, 221, 221), rgb(110, 136, 161));
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+.weather-app {
+  max-width: 800px;
+  margin: 30px auto;
+}
+.current-temp {
+  font-size: 30px;
+}
+.current-emoji {
+  font-size: 70px;
+}
+.weather-att {
+  max-width: 175px;
+}
+.forecast {
+  text-align: center;
+}
