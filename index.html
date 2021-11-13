@@ -11,6 +11,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
@@ -44,40 +45,48 @@
       </form>
 
       <div class="row justify-content-evenly align-items-center">
-        <div class="col-1 current-left">
+        <div class="col-1 current-left ps-4">
           <img
             src="https://img.icons8.com/ios/50/000000/fog-day--v1.png"
             class="current-weather-img"
             alt="Current-Weather"
           />
         </div>
-        <div class="col-1 current-right">
-          <h2 class="found-temp">58°<span class="degree-unit">F|C</span></h2>
+        <div class="col-2 current-right offset-1">
+          <h2 class="found-temp">
+            <span id="found-temp">58</span
+            ><span class="degree-unit">°F|°C</span>
+          </h2>
         </div>
         <div class="row gx-2 justify-content-evenly align-items-center">
-          <div class="col-2 offset-1">
-            <div class="p-1">
-              thursday <br />
-              partially cloudy
+          <div class="col-2">
+            <div class="p-1 row2-descrip">
+              <span id="day">thursday</span> <br />
+              <span id="weather-descrip">partially cloudy</span>
             </div>
           </div>
           <div class="col-2">
-            <div class="p-1">humidity: 5% <br />wind: 12MpH</div>
+            <div class="p-1 row2-descrip">
+              humidity: <span id="humidity">5</span>%<br />wind:
+              <span id="windspeed">12</span> MpH
+            </div>
           </div>
         </div>
       </div>
       <div class="row p-3 justify-content-evenly align-items-center section-3">
         <div class="col-1">
           <img src="https://img.icons8.com/ios/50/000000/sunrise--v1.png" />
-          <span id="sunrise">6:05am</span>
+          <span id="sunrise">6:05</span><small>AM</small>
         </div>
-        <div class="col-2">
-          <span class="current-time">3:25pm</span><br />
-          <h6>Current Time</h6>
+        <div class="col-2 align-self-end">
+          <h5>
+            <span id="hour-minute" class="current-time">3:25</span
+            ><span id="midday-mark" class="midday">AMPM</span>
+          </h5>
         </div>
         <div class="col-1">
           <img src="https://img.icons8.com/ios/50/000000/sunset--v1.png" />
-          <span id="sunset">6:03pm</span>
+          <span id="sunset">6:03</span><small>PM</small>
         </div>
       </div>
       <div class="row p-4 justify-content-evenly forecast-bar">

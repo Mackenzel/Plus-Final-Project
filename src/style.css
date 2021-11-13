@@ -23,10 +23,16 @@ h1 {
   background-color: #9994b4;
   border-radius: 20px;
 }
-
+.row2-descrip {
+  text-transform: capitalize;
+  text-align: center;
+}
 .current-time {
-  vertical-align: super;
-  font-size: 18px;
+  vertical-align: text-bottom;
+  font-size: 28px;
+}
+.midday {
+  font-size: 22px;
 }
 .weather-app {
   max-width: 1000px;
