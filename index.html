@@ -15,84 +15,118 @@
   </head>
   <body>
     <div class="container weather-app">
-      <header>
-        <form>
-          <div class="row p-3 justify-content-md-center">
-            <div class="col-5">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Enter city name..."
-              />
+      <form>
+        <div class="row p-3 align-items-center justify-content-evenly">
+          <div class="col-1">
+            <input
+              type="image"
+              class="form-control-sm locate-image"
+              src="https://img.icons8.com/ios/50/000000/place-marker--v1.png"
+            />
+          </div>
+          <div class="col-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter city name..."
+            />
+          </div>
+
+          <div class="col-1">
+            <input
+              type="image"
+              class="form-control-sm search-image"
+              src="https://img.icons8.com/ios/50/000000/search.png"
+            />
+          </div>
+          <div class="row"><h1 id="found-city">city name</h1></div>
+        </div>
+      </form>
+
+      <div class="row justify-content-evenly align-items-center">
+        <div class="col-1 current-left">
+          <img
+            src="https://img.icons8.com/ios/50/000000/fog-day--v1.png"
+            class="current-weather-img"
+            alt="Current-Weather"
+          />
+        </div>
+        <div class="col-1 current-right">
+          <h2 class="found-temp">58°<span class="degree-unit">F|C</span></h2>
+        </div>
+        <div class="row gx-2 justify-content-evenly align-items-center">
+          <div class="col-2 offset-1">
+            <div class="p-1">
+              thursday <br />
+              partially cloudy
             </div>
-            <div class="col-1">
-              <input
-                type="submit"
-                class="btn-primary form-control"
-                value="🔍"
-              />
-            </div>
-            <div class="col-1">
-              <input
-                type="submit"
-                class="btn-success form-control"
-                value="📍"
-              />
-            </div>
           </div>
-        </form>
-      </header>
-      <main>
-        <h1>New York</h1>
-        <ul>
-          <li><span>Monday</span><span> 3:02</span></li>
-          <li>weather description</li>
-        </ul>
-        <div class="row justify-content-md-end">
-          <div class="col-5">
-            <span class="current-emoji">☀</span>
-            <span class="current-temp">45 </span><a href="">°C | </a
-            ><a href="">°F</a>
-          </div>
-          <div class="col-4 weather-att">
-            <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 75%</li>
-              <li>Wind: 2mph</li>
-            </ul>
-          </div>
-        </div>
-      </main>
-      <div class="row g-4 p-3 m-4 forecast">
-        <div class="col">
-          <div class="p-2 border bg-light">Tuesday <br />☁ 40</div>
-        </div>
-        <div class="col">
-          <div class="p-2 border bg-light">
-            Wednesday <br />
-            ☁ 40
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-2 border bg-light">
-            Thursday <br />
-            ☁ 40
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-2 border bg-light">
-            Friday <br />
-            ☁ 40
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-2 border bg-light">
-            Saturday <br />
-            ☁ 40
+          <div class="col-2">
+            <div class="p-1">humidity: 5% <br />wind: 12MpH</div>
           </div>
         </div>
       </div>
-      <small>open-source code by Mackenzie Yarnall hosted on Netlify</small>
+      <div class="row p-3 justify-content-evenly align-items-center section-3">
+        <div class="col-1">
+          <img src="https://img.icons8.com/ios/50/000000/sunrise--v1.png" />
+          <span id="sunrise">6:05am</span>
+        </div>
+        <div class="col-2">
+          <span class="current-time">3:25pm</span><br />
+          <h6>Current Time</h6>
+        </div>
+        <div class="col-1">
+          <img src="https://img.icons8.com/ios/50/000000/sunset--v1.png" />
+          <span id="sunset">6:03pm</span>
+        </div>
+      </div>
+      <div class="row p-4 justify-content-evenly forecast-bar">
+        <div class="col-2 border-box">
+          <span id="f-day1">Friday</span><br />
+          <span id="f-temp1">40</span
+          ><span id="f-img1"
+            ><img
+              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
+          /></span>
+        </div>
+        <div class="col-2 border-box">
+          <span id="f-day2">Saturday</span><br />
+          <span id="f-temp2">40</span>
+          <span id="f-img2"
+            ><img
+              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
+          /></span>
+        </div>
+        <div class="col-2 border-box">
+          <span id="f-day3">Sunday</span><br />
+          <span id="f-temp3">40</span>
+          <span id="f-img3"
+            ><img
+              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
+          /></span>
+        </div>
+        <div class="col-2 border-box">
+          <span id="f-day4">Monday</span><br />
+          <span id="f-temp4">40</span
+          ><span id="f-img4"
+            ><img
+              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
+          /></span>
+        </div>
+        <div class="col-2 border-box">
+          <span id="f-day5">Tuesday</span><br />
+          <span id="f-temp5">40</span
+          ><span id="f-img5"
+            ><img
+              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
+          /></span>
+        </div>
+      </div>
+      <p>
+        Open-source code by Mackenzie Yarnall
+        <a href="https://icons8.com/icon/0sTmBjAQDKfi/place-marker">icons</a>
+        by Icons8
+      </p>
     </div>
     <script src="src/app.js"></script>
   </body>
