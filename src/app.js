@@ -96,21 +96,23 @@ form.addEventListener("submit", formSubmission);
 
 ////////////////////////////////////////
 
-function locateCityTemp(position) {
+function locateUser(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
 
   let apiKey = "274afd25137632e37b720563347c5cdb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
-  axios.get(apiUrl).then(showCityTemp);
+  axios.get(apiUrl).then(displayWeather);
 }
 
 function findMyCity(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(locateCityTemp);
+  navigator.geolocation.getCurrentPosition(locateUser);
 }
+
 let currentCityButton = document.querySelector("#my-city");
-currentCityButton.addEventListener("submit", findMyCity);
+currentCityButton.addEventListener("click", findMyCity);
 
 citySearch("New York");
+////////////////////
