@@ -16,15 +16,16 @@
   </head>
   <body>
     <div class="container weather-app">
-      <form id="search-form">
+      
         <div class="row p-3 align-items-center justify-content-evenly">
           <div class="col-1">
-            <input
-              id="my-city"
-              type="image"
-              class="form-control-sm locate-image"
-              src="https://img.icons8.com/ios/50/000000/place-marker--v1.png"
-            />
+              <input
+                id="my-city"
+                type="image"
+                class="form-control-sm locate-image"
+                src="https://img.icons8.com/ios/50/000000/place-marker--v1.png"
+              />
+           <form id="search-form">
           </div>
           <div class="col-6">
             <input
@@ -59,7 +60,11 @@
         <div class="col-2 current-right offset-1">
           <h2 class="found-temp">
             <span id="found-temp">58</span
-            ><span class="degree-unit">°F|°C</span>
+            ><span class="degree-unit"
+              ><a href="#" id="fahr-link">°F</a>|<a href="#" id="cel-link"
+                >°C</a
+              ></span
+            >
           </h2>
         </div>
         <div class="row gx-2 justify-content-evenly align-items-center">

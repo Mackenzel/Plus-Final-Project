@@ -36,7 +36,6 @@ displayTime.innerHTML = `${hour}:${minutes}`;
 let displayDay = document.querySelector("#day");
 displayDay.innerHTML = `${day}`;
 
-///////////////////////
 function findTime(timestamp) {
   let time = new Date(timestamp);
 
@@ -53,7 +52,6 @@ function findTime(timestamp) {
 }
 
 function displayWeather(response) {
-  console.log(response.data);
   let foundTemp = document.querySelector("#found-temp");
   let foundDescription = document.querySelector("#weather-descrip");
   let foundCity = document.querySelector("#found-city");
@@ -63,7 +61,9 @@ function displayWeather(response) {
   let sunset = document.querySelector("#sunset");
   let currentIcon = document.querySelector("#current-icon");
 
-  foundTemp.innerHTML = Math.round(response.data.main.temp);
+  fahrenheitTemperature = response.data.main.temp;
+
+  foundTemp.innerHTML = Math.round(fahrenheitTemperature);
   foundDescription.innerHTML = response.data.weather[0].description;
   foundCity.innerHTML = response.data.name;
   foundHumidity.innerHTML = response.data.main.humidity;
@@ -76,6 +76,8 @@ function displayWeather(response) {
   );
 }
 
+let form = document.querySelector("#search-form");
+
 function citySearch(city) {
   let units = "imperial";
   let apiKey = "274afd25137632e37b720563347c5cdb";
@@ -84,17 +86,12 @@ function citySearch(city) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-////////////////////////////////
 function formSubmission(event) {
   event.preventDefault();
   let city = document.querySelector("#search-bar").value;
   citySearch(city);
 }
-
-let form = document.querySelector("#search-form");
 form.addEventListener("submit", formSubmission);
-
-////////////////////////////////////////
 
 function locateUser(position) {
   let lat = position.coords.latitude;
@@ -111,8 +108,27 @@ function findMyCity(event) {
   navigator.geolocation.getCurrentPosition(locateUser);
 }
 
-let currentCityButton = document.querySelector("#my-city");
-currentCityButton.addEventListener("click", findMyCity);
+let locateButton = document.querySelector("#my-city");
+locateButton.addEventListener("click", findMyCity);
+
+let fahrenheitTemperature = null;
+
+function displayCelTemp(event) {
+  event.preventDefault();
+  let foundTemp = document.querySelector("#found-temp");
+  let celTemp = ((fahrenheitTemperature - 32) * 5) / 9;
+  foundTemp.innerHTML = Math.round(celTemp);
+}
+function displayFahrTemp(event) {
+  event.preventDefault();
+  let foundTemp = document.querySelector("#found-temp");
+  foundTemp.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahr-link");
+fahrenheitLink.addEventListener("click", displayFahrTemp);
+
+let celcuisLink = document.querySelector("#cel-link");
+celcuisLink.addEventListener("click", displayCelTemp);
 
 citySearch("New York");
-////////////////////
