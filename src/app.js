@@ -115,12 +115,18 @@ let fahrenheitTemperature = null;
 
 function displayCelTemp(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celcuisLink.classList.add("active");
+
   let foundTemp = document.querySelector("#found-temp");
   let celTemp = ((fahrenheitTemperature - 32) * 5) / 9;
   foundTemp.innerHTML = Math.round(celTemp);
 }
 function displayFahrTemp(event) {
   event.preventDefault();
+  fahrenheitLink.classList.add("active");
+  celcuisLink.classList.remove("active");
+
   let foundTemp = document.querySelector("#found-temp");
   foundTemp.innerHTML = Math.round(fahrenheitTemperature);
 }

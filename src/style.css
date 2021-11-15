@@ -56,6 +56,13 @@ a {
   vertical-align: super;
   font-size: 15px;
 }
+.degree-unit .active {
+  cursor: default;
+  color: #545166;
+}
+.degree-unit :hover {
+  text-decoration: none;
+}
 .section-3 {
   text-align: center;
 }
