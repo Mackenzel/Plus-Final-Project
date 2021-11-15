@@ -1,4 +1,5 @@
 body {
+  font-family: monospace;
 }
 h1 {
   text-align: center;
@@ -23,8 +24,6 @@ a {
   border-spacing: 0px;
   border: 4px solid #f8e7df;
   border-radius: 20px;
-}
-.forecast-bar {
   margin: 10px;
   background-color: #9994b4;
   border-radius: 20px;
@@ -33,11 +32,16 @@ a {
   text-transform: capitalize;
   text-align: center;
 }
+.current-day {
+  font-size: 20px;
+  font-weight: 600;
+}
 .current-time {
   vertical-align: text-bottom;
   font-size: 28px;
 }
 .midday {
+  vertical-align: text-bottom;
   font-size: 22px;
 }
 .weather-app {
@@ -66,6 +70,14 @@ a {
 .section-3 {
   text-align: center;
 }
+.sun {
+  padding: 10px;
+  width: 90px;
+  margin: 15px;
+  background-color: #bcd5f3;
+  border-radius: 20px;
+  border: 2px solid #f8e7df;
+}
 .locate-image {
   max-width: 60px;
   background-color: #d4dffa;
@@ -80,6 +92,9 @@ a {
 }
 .current-weather-img {
   width: 130px;
+  border: 4px solid #f8e7df;
+  background-color: #9994b4;
+  border-radius: 25px;
 }
 .found-temp {
   font-size: 70px;
