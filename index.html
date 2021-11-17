@@ -16,17 +16,16 @@
   </head>
   <body>
     <div class="container weather-app">
-      
-        <div class="row p-3 align-items-center justify-content-evenly">
-          <div class="col-1">
-              <input
-                id="my-city"
-                type="image"
-                class="form-control-sm locate-image"
-                src="https://img.icons8.com/ios/50/000000/place-marker--v1.png"
-              />
-           <form id="search-form">
-          </div>
+      <div class="row p-3 align-items-center justify-content-evenly">
+        <div class="col-1">
+          <input
+            id="my-city"
+            type="image"
+            class="form-control-sm locate-image"
+            src="https://img.icons8.com/ios/50/000000/place-marker--v1.png"
+          />
+        <form id="search-form"></div>
+        
           <div class="col-6">
             <input
               id="search-bar"
@@ -36,7 +35,6 @@
               placeholder="Enter city name..."
             />
           </div>
-
           <div class="col-1">
             <input
               type="image"
@@ -44,9 +42,9 @@
               src="https://img.icons8.com/ios/50/000000/search.png"
             />
           </div>
-          <div class="row"><h1 id="found-city">New York</h1></div>
-        </div>
-      </form>
+        </form>
+        <div class="row"><h1 id="found-city">New York</h1></div>
+      </div>
 
       <div class="row justify-content-evenly align-items-center">
         <div class="col-1 current-left ps-4">
@@ -61,12 +59,15 @@
           <h2 class="found-temp">
             <span id="found-temp">58</span
             ><span class="degree-unit"
-              ><a href="#" id="fahr-link" class="active">°F</a>|<a href="#" id="cel-link"
+              ><a href="#" id="fahr-link" class="active">°F</a>|<a
+                href="#"
+                id="cel-link"
                 >°C</a
               ></span
             >
           </h2>
         </div>
+
         <div class="row gx-2 justify-content-evenly align-items-center">
           <div class="col-2">
             <div class="p-1 row2-descrip">
@@ -76,14 +77,16 @@
           </div>
           <div class="col-2">
             <div class="p-1 row2-descrip">
-              humidity: <span id="humidity">5</span>%<br />wind:
-              <span id="windspeed">12</span> MpH
+              humidity: <span id="humidity">5</span>%<br />
+              wind:<span id="windspeed">12</span> MpH
             </div>
           </div>
         </div>
       </div>
+
       <div class="row p-3 justify-content-evenly align-items-center section-3">
-        <div class="col-1 sun"> <span>Sunrise</span>
+        <div class="col-1 sun">
+          <span>Sunrise</span>
           <img src="https://img.icons8.com/ios/50/000000/sunrise--v1.png" />
           <span id="sunrise">6:05</span><small>AM </small>
         </div>
@@ -93,53 +96,15 @@
             ><span id="midday-mark" class="midday">AMPM</span>
           </h5>
         </div>
-        <div class="col-1 sun"> <span>Sunset</span>
+        <div class="col-1 sun">
+          <span>Sunset</span>
           <img src="https://img.icons8.com/ios/50/000000/sunset--v1.png" />
           <span id="sunset">6:03</span><small>PM</small>
         </div>
       </div>
-      <div class="row p-4 justify-content-evenly forecast-bar">
-        <div class="col-2 border-box">
-          <span id="f-day1">Friday</span><br />
-          <span id="f-temp1">40</span
-          ><span id="f-img1"
-            ><img
-              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
-          /></span>
-        </div>
-        <div class="col-2 border-box">
-          <span id="f-day2">Saturday</span><br />
-          <span id="f-temp2">40</span>
-          <span id="f-img2"
-            ><img
-              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
-          /></span>
-        </div>
-        <div class="col-2 border-box">
-          <span id="f-day3">Sunday</span><br />
-          <span id="f-temp3">40</span>
-          <span id="f-img3"
-            ><img
-              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
-          /></span>
-        </div>
-        <div class="col-2 border-box">
-          <span id="f-day4">Monday</span><br />
-          <span id="f-temp4">40</span
-          ><span id="f-img4"
-            ><img
-              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
-          /></span>
-        </div>
-        <div class="col-2 border-box">
-          <span id="f-day5">Tuesday</span><br />
-          <span id="f-temp5">40</span
-          ><span id="f-img5"
-            ><img
-              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
-          /></span>
-        </div>
-      </div>
+
+      <div id="weather-forecast">
+        
       <p>
         <a href="https://github.com/Mackenzel/Plus-Final-Project"
           >Open-source</a

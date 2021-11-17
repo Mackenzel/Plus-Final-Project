@@ -61,6 +61,8 @@ function displayWeather(response) {
   let sunset = document.querySelector("#sunset");
   let currentIcon = document.querySelector("#current-icon");
 
+  displayForecast();
+
   fahrenheitTemperature = response.data.main.temp;
 
   foundTemp.innerHTML = Math.round(fahrenheitTemperature);
@@ -136,5 +138,28 @@ fahrenheitLink.addEventListener("click", displayFahrTemp);
 
 let celcuisLink = document.querySelector("#cel-link");
 celcuisLink.addEventListener("click", displayCelTemp);
+
+function displayForecast() {
+  let forecast = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row p-4 justify-content-evenly forecast-bar" >`;
+  let days = ["Thur", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2 border-box">
+          <span id="f-day">${day}</span><br />
+          <span id="f-temp">40</span
+          ><span id="f-img"
+            ><img
+              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
+          /></span>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
 
 citySearch("New York");
