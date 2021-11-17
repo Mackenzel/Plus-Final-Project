@@ -144,28 +144,52 @@ fahrenheitLink.addEventListener("click", displayFahrTemp);
 let celcuisLink = document.querySelector("#cel-link");
 celcuisLink.addEventListener("click", displayCelTemp);
 
-function displayForecast(response) {
-  let forecast = document.querySelector("#weather-forecast");
-  console.log(response.data.daily);
+function formatForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
 
-  let forecastHTML = `<div class="row p-4 justify-content-evenly forecast-bar" >`;
-  let days = ["Thur", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+function displayForecast(response) {
+  let forecastBar = document.querySelector("#weather-forecast");
+  let forecast = response.data.daily;
+  forecast.shift();
+
+  let forecastHTML = `<div class="row p-4 justify-content-evenly" >`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col-2 border-box">
-          <span id="f-day">${day}</span><br />
-          <span id="f-temp">40</span
-          ><span id="f-img"
-            ><img
-              src="https://img.icons8.com/ios/50/000000/fahrenheit-symbol.png"
+          <span class= "forecast-day">${formatForecast(
+            forecastDay.dt
+          )}</span><br />
+          <span class= "max">${Math.round(forecastDay.temp.max)}</span>
+          <span class= "min">${Math.round(forecastDay.temp.min)}</span>
+          <span>
+          <img
+            class = "fore-img"
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
           /></span>
         </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
+  forecastBar.innerHTML = forecastHTML;
 }
 
 citySearch("New York");

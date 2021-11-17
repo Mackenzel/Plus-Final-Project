@@ -13,14 +13,16 @@ p {
 a {
   text-decoration: none;
 }
-#f-img1 {
+
+.fore-img {
+  width: 80px;
   float: right;
 }
 .border-box {
   border-spacing: 0px;
   border: 4px solid #f8e7df;
   border-radius: 20px;
-  margin: 10px;
+  margin: 8px;
   background-color: #9994b4;
   border-radius: 20px;
 }
@@ -95,4 +97,12 @@ a {
 .found-temp {
   font-size: 70px;
   text-align: right;
+}
+.min {
+  opacity: 0.7;
+  vertical-align: sub;
+}
+.forecast-day {
+  color: #f8e7df;
+  font-size: 18px;
 }
