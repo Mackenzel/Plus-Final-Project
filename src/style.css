@@ -4,6 +4,7 @@ body {
 h1 {
   text-align: center;
   color: #545166;
+  font-size: 60px;
 
   text-transform: capitalize;
 }
